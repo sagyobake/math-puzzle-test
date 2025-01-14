@@ -12,7 +12,7 @@ Deno.serve({
         const { socket, response } = Deno.upgradeWebSocket(req);
 
         const sendToAllClient = async (key, value) => {
-            await kv.set(key, value);
+            await kv.set([key], value);
             console.log(kv);
             user_list.forEach(user => {
                 user.send(`${key}: ${value}`);
