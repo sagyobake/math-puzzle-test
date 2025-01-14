@@ -1,5 +1,5 @@
-// WebSocket 接続を作成
-const socket = new WebSocket("ws://0.0.0.0:8000");
+//テスト、本番用に応じてURLを切り替える
+const socket = new WebSocket("wss://sagyobake-math-puzzle-47.deno.dev");
 
 // 接続が開いたときのイベント
 socket.addEventListener("open", (event) => {

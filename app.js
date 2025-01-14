@@ -1,6 +1,6 @@
 let user_list = [];
 
-await Deno.openKv();
+const kv = await Deno.openKv();
 
 Deno.serve({
     port: 443,
@@ -12,6 +12,8 @@ Deno.serve({
         const { socket, response } = Deno.upgradeWebSocket(req);
 
         const sendToAllClient = async (key, value) => {
+            await kv.set(key, value);
+            console.log(kv);
             user_list.forEach(user => {
                 user.send(`${key}: ${value}`);
             });
