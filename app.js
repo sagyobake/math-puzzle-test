@@ -13,7 +13,7 @@ Deno.serve({
 
         const sendToAllClient = async (key, value) => {
             await kv.set(key, value);
-            console.log(kv.key);
+            //console.log(kv.key);
             user_list.forEach(user => {
                 user.send(`${key}: ${value}`);
             });
