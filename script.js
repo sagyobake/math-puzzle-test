@@ -1,6 +1,6 @@
 //テスト、本番用に応じてURLを切り替える
-//const socket = new WebSocket("wss://sagyobake-math-puzzle-47.deno.dev");
-const socket = new WebSocket("ws://0.0.0.0:8000/");
+const socket = new WebSocket("wss://sagyobake-math-puzzle-47.deno.dev");
+//const socket = new WebSocket("ws://0.0.0.0:8000/");
 let square = [];
 let x = 0;
 let y = 0;
